@@ -1,1 +1,8 @@
 This file is a description for the Fortran code for "CRET" folder.
+These Fortran code is related to my thesis paper, "Tax on High-value Real Estate, House Prices, Rents, and Inequality".
+
+1. "GE_solution.f90" : Find a stationary equilibrium using the Nelder-Mead Algorithm.
+2. "PE_iteration.f90" : Grid search code using 'partial' function
+3. "PE_print.f90" : Export the selected output for further analysis
+
+
