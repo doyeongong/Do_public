@@ -1,4 +1,4 @@
-// The basic model of Iacoviello(2005, AER)
+// The full model of Iacoviello(2005, AER)
 // Yeongwoong Do, March 2024
 
 // endogeneous variables
