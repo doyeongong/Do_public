@@ -21,7 +21,7 @@ OMPS = OMPS(:,2);
 HP_data = readtable('Zillow_zip_code.csv','ReadVariableNames', true);
 
 % 'Metro' 매칭
-rows = HP_data.Metro == "Dallas-Fort Worth-Arlington, TX";
+rows = HP_data.Metro == "Denver-Aurora-Lakewood, CO";
 % 해당하는 행에서 10번째부터 14번째 열까지의 데이터를 추출합니다.
 data = table2array(HP_data(rows, 10:end))';
 % NaN 포함한 열 확인
@@ -71,7 +71,7 @@ end
 result.beta = b_h;
 result.std = se_b_h;
 result.price = data;
-save("DA_result.mat", "result");
+save("DV.mat", "result");
 
 %% Figure
 
