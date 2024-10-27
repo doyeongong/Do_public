@@ -66,7 +66,6 @@ var e_R = 0.29^2;
 end;
    
 //Check steady states
-resid(1);
 steady;
 check;
 
