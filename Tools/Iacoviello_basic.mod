@@ -62,7 +62,7 @@ end;
 
 //Exgeneous Shocks 
 shocks;
-var e_R = 0.29^2;
+var e_R = 0.01^2;
 end;
    
 //Check steady states
