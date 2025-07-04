@@ -43,7 +43,10 @@ Below is a summary of key files directly linked to the main text results:
 
 ## Notes
 
-- Some raw data files (e.g., SCF microdata) may require separate access or user agreements depending on their source.
+## Notes
+
+- All STATA do-files and MATLAB m-files require setting the correct working directory before execution.
+- Some files depend on outputs from previous steps; please carefully check the preamble section of each `Step_xx` file before running.
 - All codes are provided for academic use and transparency.
 
 
