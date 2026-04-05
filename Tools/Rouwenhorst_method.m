@@ -1,4 +1,4 @@
-function [Theta, y] = Rouwenhorst_method(rho, sigma, N, range)
+function [Theta, y, pi_stat] = Rouwenhorst_method(rho, sigma, N, range)
     % range : abs(y_max - y_min)
     % basic option : sqrt(N - 1) * sigma_z where adj=0
 
@@ -36,5 +36,17 @@ function [Theta, y] = Rouwenhorst_method(rho, sigma, N, range)
             Theta_old = Theta_new ./ row_sums;
         end
         Theta = Theta_old; % Update Theta to the latest Theta_old
+    end
+
+    % stationary distribution
+    [V,D] = eig(Theta');
+    eigvals = diag(D);
+    [~,idx] = min(abs(eigvals - 1));
+    pi_stat = V(:,idx);
+    pi_stat = (pi_stat / sum(pi_stat))';
+
+    % check
+    if (max(abs(pi_stat*Theta - pi_stat)))>1e-10
+        fprintf("Stationary distribution was wrong!")
     end
 end
