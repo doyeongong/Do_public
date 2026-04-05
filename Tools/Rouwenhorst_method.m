@@ -1,5 +1,5 @@
-function [Theta, y] = Rouwenhorst_method(rho, sigma, N, adj)
-    % adj : psi = adj*sigma_z
+function [Theta, y] = Rouwenhorst_method(rho, sigma, N, range)
+    % range : abs(y_max - y_min)
     % basic option : sqrt(N - 1) * sigma_z where adj=0
 
     % print error message when N < 2
@@ -9,10 +9,10 @@ function [Theta, y] = Rouwenhorst_method(rho, sigma, N, adj)
     
     p = (1 + rho) / 2;
     sigma_z = sigma / sqrt(1 - rho^2);
-    if adj==0
+    if range==0
         psi = sqrt(N - 1) * sigma_z;
     else
-        psi = adj;
+        psi = abs(range)/2;
     end
     
     % state space
